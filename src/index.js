@@ -15,5 +15,18 @@ function initializeCode() {
 
   myButton.addEventListener("click", function () {
     console.log("hello world");
+    document.getElementById("h1").innerHTML = "My notebook";
+  });
+
+  const addData = document.getElementById("add-data");
+
+  addData.addEventListener("click", function () {
+    const list = document.getElementById("list");
+
+    let newListItem = document.createElement("li");
+
+    newListItem.innerText = document.getElementById("text").value;
+
+    list.appendChild(newListItem);
   });
 }

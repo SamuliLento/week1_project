@@ -208,6 +208,14 @@ function initializeCode() {
   var myButton = document.getElementById("my-button");
   myButton.addEventListener("click", function () {
     console.log("hello world");
+    document.getElementById("h1").innerHTML = "My notebook";
+  });
+  var addData = document.getElementById("add-data");
+  addData.addEventListener("click", function () {
+    var list = document.getElementById("list");
+    var newListItem = document.createElement("li");
+    newListItem.innerText = document.getElementById("text").value;
+    list.appendChild(newListItem);
   });
 }
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
