@@ -194,7 +194,22 @@ module.hot.accept(reloadCSS);
 
 require("./styles.css");
 
-document.getElementById("app").innerHTML = "\n<h1>Hello Vanilla!</h1>\n<div>\n  We use the same configuration as Parcel to bundle this sandbox, you can find more\n  info about Parcel \n  <a href=\"https://parceljs.org\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.\n</div>\n";
+if (document.readyState !== "loading") {
+  console.log("Document is ready!");
+  initializeCode();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Document is ready after waiting!");
+    initializeCode();
+  });
+}
+
+function initializeCode() {
+  var myButton = document.getElementById("my-button");
+  myButton.addEventListener("click", function () {
+    console.log("hello world");
+  });
+}
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -223,7 +238,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45469" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33625" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
